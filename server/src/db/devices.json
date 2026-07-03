@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Drawing Fan 1",
+    "room": "Drawing Room",
+    "type": "fan",
+    "status": false,
+    "watt": 60,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 2,
+    "name": "Drawing Fan 2",
+    "room": "Drawing Room",
+    "type": "fan",
+    "status": false,
+    "watt": 60,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 3,
+    "name": "Drawing Light 1",
+    "room": "Drawing Room",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 4,
+    "name": "Drawing Light 2",
+    "room": "Drawing Room",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 5,
+    "name": "Drawing Light 3",
+    "room": "Drawing Room",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 6,
+    "name": "Work1 Fan 1",
+    "room": "Work Room 1",
+    "type": "fan",
+    "status": false,
+    "watt": 60,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 7,
+    "name": "Work1 Fan 2",
+    "room": "Work Room 1",
+    "type": "fan",
+    "status": false,
+    "watt": 60,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 8,
+    "name": "Work1 Light 1",
+    "room": "Work Room 1",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 9,
+    "name": "Work1 Light 2",
+    "room": "Work Room 1",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 10,
+    "name": "Work1 Light 3",
+    "room": "Work Room 1",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 11,
+    "name": "Work2 Fan 1",
+    "room": "Work Room 2",
+    "type": "fan",
+    "status": false,
+    "watt": 60,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 12,
+    "name": "Work2 Fan 2",
+    "room": "Work Room 2",
+    "type": "fan",
+    "status": false,
+    "watt": 60,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 13,
+    "name": "Work2 Light 1",
+    "room": "Work Room 2",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 14,
+    "name": "Work2 Light 2",
+    "room": "Work Room 2",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  },
+  {
+    "id": 15,
+    "name": "Work2 Light 3",
+    "room": "Work Room 2",
+    "type": "light",
+    "status": false,
+    "watt": 15,
+    "lastChanged": null,
+    "runningSince": null
+  }
+]

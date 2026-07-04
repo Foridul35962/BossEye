@@ -81,7 +81,7 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen p-6 max-w-6xl mx-auto space-y-6">
       <header className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Smart Office Dashboard</h1>
+        <h1 className="text-2xl font-bold">Boss Eye Dashboard</h1>
         <span
           className={`text-xs px-2 py-1 rounded-full border ${
             connected ? "border-emerald-500 text-emerald-400" : "border-red-500 text-red-400"

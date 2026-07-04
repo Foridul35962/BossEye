@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import errorHandler from './helpers/ErrorHandler.js'
+import router from './routes/index.route.js'
 
 const app = express()
 
@@ -18,9 +19,8 @@ app.get('/', (req, res) => {
     res.send("BossEye server is running ...")
 })
 
-app.get("/health", (req, res) => {
-    res.status(200).json({ status: "ok" });
-});
+app.use("/api", router)
+
 
 app.use(errorHandler)
 

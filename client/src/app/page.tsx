@@ -8,6 +8,7 @@ import DeviceStatusPanel from "../components/DeviceStatusPanel";
 import PowerMeter from "../components/PowerMeter";
 import AlertsPanel from "../components/AlertsPanel";
 import OfficeLayout from "../components/OfficeLayout";
+import { Radio, LayoutDashboard } from "lucide-react";
 
 export default function DashboardPage() {
   const [devices, setDevices] = useState<Device[]>([]);
@@ -16,7 +17,6 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true);
   const [connected, setConnected] = useState(false);
 
-  // Initial load over REST.
   useEffect(() => {
     (async () => {
       try {
@@ -36,7 +36,6 @@ export default function DashboardPage() {
     })();
   }, []);
 
-  // Live updates over Socket.IO — no polling, no manual refresh needed.
   useEffect(() => {
     const socket = getSocket();
 
@@ -65,7 +64,6 @@ export default function DashboardPage() {
   }, []);
 
   const handleToggle = useCallback(async (id: string, status: boolean) => {
-    // Optimistic UI update; the socket broadcast will reconcile shortly after.
     setDevices((prev) => prev.map((d) => (d._id === id ? { ...d, status } : d)));
     try {
       await api.toggleDevice(id, status);
@@ -75,30 +73,64 @@ export default function DashboardPage() {
   }, []);
 
   if (loading) {
-    return <div className="p-8 text-gray-400">Loading office dashboard...</div>;
+    return (
+      <div className="min-h-screen bg-linear-to-br from-[#0f172a] via-[#0b0f19] to-[#020617] flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-indigo-500/20 border-t-indigo-400 rounded-full animate-spin" />
+          <p className="text-sm font-semibold text-slate-400 tracking-widest uppercase">Initializing Core...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <main className="min-h-screen p-6 max-w-6xl mx-auto space-y-6">
-      <header className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Boss Eye Dashboard</h1>
+    <main className="min-h-screen bg-linear-to-tr from-[#0b0f19] via-[#0f172a] to-[#1e1b4b]/30 text-slate-100 p-8 w-full max-w-none space-y-8">
+      {/* Premium Glassmorphic Header */}
+      <header className="flex items-center justify-between border-b border-slate-800/80 pb-6 backdrop-blur-md">
+        <div className="flex items-center gap-3">
+          <div className="p-3 bg-linear-to-br from-indigo-500 to-purple-600 rounded-xl shadow-[0_0_20px_rgba(99,102,241,0.3)] text-white">
+            <LayoutDashboard className="w-6 h-6" />
+          </div>
+          <div>
+            <h1 className="text-3xl font-black tracking-tight bg-linear-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">
+              BOSS EYE ARCHITECTURE
+            </h1>
+            <p className="text-xs font-bold text-indigo-400/80 tracking-widest uppercase mt-0.5">HQ Automation & Telemetry</p>
+          </div>
+        </div>
+        
         <span
-          className={`text-xs px-2 py-1 rounded-full border ${
-            connected ? "border-emerald-500 text-emerald-400" : "border-red-500 text-red-400"
+          className={`flex items-center gap-2 text-xs font-black tracking-widest px-4 py-2 rounded-xl border-2 shadow-inner transition-all duration-500 ${
+            connected 
+              ? "bg-emerald-500/10 border-emerald-500/40 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.15)]" 
+              : "bg-rose-500/10 border-rose-500/40 text-rose-400 animate-pulse"
           }`}
         >
-          {connected ? "● Live" : "● Disconnected"}
+          <Radio className={`w-4 h-4 ${connected ? "animate-pulse" : ""}`} />
+          {connected ? "SYSTEM LIVE" : "LINK SEVERED"}
         </span>
       </header>
 
-      <OfficeLayout devices={devices} />
+      {/* Grid Layout - Full Screen Utilization */}
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+        {/* Layout Floor Plan Takes center stage */}
+        <div className="xl:col-span-12">
+          <OfficeLayout devices={devices} />
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <PowerMeter power={power} />
-        <AlertsPanel alerts={alerts} />
+        {/* Analytics Section Split */}
+        <div className="xl:col-span-6">
+          <PowerMeter power={power} />
+        </div>
+        <div className="xl:col-span-6">
+          <AlertsPanel alerts={alerts} />
+        </div>
+
+        {/* Live Control Panel at the bottom but fully expanded */}
+        <div className="xl:col-span-12">
+          <DeviceStatusPanel devices={devices} onToggle={handleToggle} />
+        </div>
       </div>
-
-      <DeviceStatusPanel devices={devices} onToggle={handleToggle} />
     </main>
   );
 }

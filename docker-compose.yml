@@ -12,6 +12,9 @@ services:
       - mongo
     env_file:
       - .env.docker
+    environment:
+      - CORS_ORIGIN=http://localhost:3000
+      - REDIS_PREFIX=BossEye
     volumes:
       - ./server:/server
       - /server/node_modules

@@ -1,5 +1,8 @@
 # Hardware / electrical schematic — build guide
 
+**Live circuit**: https://wokwi.com/projects/468599334433890305
+<!-- e.g. https://wokwi.com/projects/XXXXXXXXXXXXXXXXXX -->
+
 This is a build guide, not a Wokwi export. The assignment requires you to
 actually construct the circuit in Wokwi or Tinkercad yourself — a generated
 project file wouldn't demonstrate the wiring reasoning the evaluation is

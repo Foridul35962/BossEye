@@ -111,6 +111,8 @@ and proactively posts to `ALERT_CHANNEL_ID` when an alert fires.
 
 ## Hardware / electrical schematic
 
+**Live Wokwi circuit**: https://wokwi.com/projects/468599334433890305
+
 Full pin-mapping, connection list, and electrical reasoning: see
 `docs/hardware-schematic.md`. You still need to build the actual circuit in
 Wokwi or Tinkercad yourself — that guide has everything needed to do it in

@@ -20,16 +20,20 @@ export default function OfficeLayout({ devices }: OfficeLayoutProps) {
     devices.filter((d) => d.room === room && d.type === type);
 
   return (
-    <div className="bg-[#131b2e]/60 border border-slate-800 backdrop-blur-xl rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+    <div className="bg-[#131b2e]/60 border border-slate-800 backdrop-blur-xl rounded-2xl p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
       <div className="flex items-center gap-3 mb-5">
         <div className="p-2 bg-indigo-500/10 rounded-lg text-indigo-400 border border-indigo-500/20">
           <Compass className="w-5 h-5 animate-spin-slow" />
         </div>
-        <h2 className="text-lg font-bold text-slate-200 tracking-wide">Interactive Cyber Floor Plan</h2>
+        <h2 className="text-base sm:text-lg font-bold text-slate-200 tracking-wide">Interactive Cyber Floor Plan</h2>
       </div>
 
-      <div className="bg-[#090d16] rounded-xl p-4 border border-slate-900 shadow-inner">
-        <svg viewBox="0 0 800 260" className="w-full min-w-187.5">
+      {/* 🛠️ Mobile and Touch Device Responsive Wrapper */}
+      <div className="bg-[#090d16] rounded-xl p-4 border border-slate-900 shadow-inner overflow-x-auto scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent">
+        <svg 
+          viewBox="0 0 800 260" 
+          className="w-full min-w-190 h-auto block"
+        >
           {ROOMS.map(({ name, x }) => {
             const fans = byRoom(name, "fan");
             const lights = byRoom(name, "light");

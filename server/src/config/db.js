@@ -9,8 +9,9 @@ const connectDB = async () => {
         await mongoose.connect(`${process.env.MONGODB_URL}/bosseye`);
         console.log("Database connected");
 
-        // PowerHistory.deleteMany()
-        // Alerts.deleteMany()
+        PowerHistory.deleteMany()
+        Alerts.deleteMany()
+        Devices.deleteMany()
 
         const count = await Devices.countDocuments();
 

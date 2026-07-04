@@ -21,7 +21,7 @@
     "name": "Drawing Light 1",
     "room": "Drawing Room",
     "type": "light",
-    "status": false,
+    "status": true,
     "watt": 15,
     "lastChanged": null,
     "runningSince": null
@@ -39,7 +39,7 @@
     "name": "Drawing Light 3",
     "room": "Drawing Room",
     "type": "light",
-    "status": false,
+    "status": true,
     "watt": 15,
     "lastChanged": null,
     "runningSince": null
@@ -57,7 +57,7 @@
     "name": "Work1 Fan 2",
     "room": "Work Room 1",
     "type": "fan",
-    "status": false,
+    "status": true,
     "watt": 60,
     "lastChanged": null,
     "runningSince": null
@@ -75,7 +75,7 @@
     "name": "Work1 Light 2",
     "room": "Work Room 1",
     "type": "light",
-    "status": false,
+    "status": true,
     "watt": 15,
     "lastChanged": null,
     "runningSince": null
@@ -93,7 +93,7 @@
     "name": "Work2 Fan 1",
     "room": "Work Room 2",
     "type": "fan",
-    "status": false,
+    "status": true,
     "watt": 60,
     "lastChanged": null,
     "runningSince": null
@@ -111,7 +111,7 @@
     "name": "Work2 Light 1",
     "room": "Work Room 2",
     "type": "light",
-    "status": false,
+    "status": true,
     "watt": 15,
     "lastChanged": null,
     "runningSince": null
@@ -129,7 +129,7 @@
     "name": "Work2 Light 3",
     "room": "Work Room 2",
     "type": "light",
-    "status": false,
+    "status": true,
     "watt": 15,
     "lastChanged": null,
     "runningSince": null

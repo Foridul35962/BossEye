@@ -5,7 +5,9 @@ import connectDB from './src/config/db.js'
 import { startServer } from './src/config/redis.js'
 import http from 'http'
 import { Server } from 'socket.io'
-import { socketHandler } from './src/config/socket.js'
+import initSockets from "./src/sockets/index.js";
+import startAlertCron from "./src/jobs/alertCron.js"
+import startSimulator from "./src/jobs/simulator.js";
 
 
 const PORT = process.env.PORT || 5000
@@ -19,9 +21,12 @@ const io = new Server(server, {
     }
 })
 
-app.set('io', io)
+initSockets(io);
+startAlertCron();
 
-socketHandler(io)
+if (process.env.ENABLE_SIMULATOR !== "false") {
+    startSimulator();
+}
 
 startServer().then(() => {
     connectDB().then(() => {
